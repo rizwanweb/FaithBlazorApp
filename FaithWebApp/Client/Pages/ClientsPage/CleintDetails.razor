@@ -1,6 +1,28 @@
-﻿@page "/clientdetails"
-<h3>CleintDetails</h3>
+﻿@page "/client/{id:int}"
+@inject IClientService ClientService
+
+<h3>@client.ClientName</h3>
+<p>@client.City.CityName</p>
 
 @code {
+	private Party? client;
+	private string message = string.Empty;
 
+	[Parameter]
+	public int Id { get; set; }
+	protected override async Task OnParametersSetAsync()
+	{
+		var result = await ClientService.GetSingleClient(Id);
+		message = "Loading Client Details";
+
+		if (!result.Success)
+		{
+			message = result.Message;
+		}
+		else
+		{
+			if (result.Data != null)
+			client = result.Data;
+		}
+	}
 }

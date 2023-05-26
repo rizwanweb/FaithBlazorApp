@@ -1,5 +1,4 @@
-﻿
-@inject IClientService ClientService
+﻿@inject IClientService ClientService
 @page "/clientlist"
 
 
@@ -18,13 +17,13 @@
         <tbody>
             @foreach (var c in ClientService.ClientsList)
             {
-                <tr>                    
-                    <td>@c.ClientName</td>
+                <tr>
+                <td><a class="text-decoration-none" href="/client/@c.Id">@c.ClientName</a></td>
                     <td>@c.ContactPerson</td>
                     <td>@c.Phone</td>
                     <td>@c.Mobile</td>
-                    <td></td>
-                    <td></td>
+                    <td>@c.City.CityName</td>
+                    <td><a class="btn btn-primary btn-sm">Edit Client</a></td>
                 </tr>
             }
         </tbody>

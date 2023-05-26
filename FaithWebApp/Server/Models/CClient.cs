@@ -25,7 +25,8 @@ public class CClient
 
     public string? Address { get; set; }
 
-    public int City { get; set; }
+    public City City { get; set; }
+    public int CityID { get; set; }
 
     public string? ClientType { get; set; }
 
@@ -41,7 +42,7 @@ public class CClient
 
     public virtual ICollection<AccountLedger> AccountLedgers { get; set; } = new List<AccountLedger>();
 
-    public virtual City CityNavigation { get; set; } = null!;
+    //public virtual City CityNavigation { get; set; } = null!;
 
     public virtual ICollection<Job> Jobs { get; set; } = new List<Job>();
 

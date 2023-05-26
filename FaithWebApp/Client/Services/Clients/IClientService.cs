@@ -1,8 +1,11 @@
-﻿namespace FaithWebApp.Client.Services.Clients
+﻿using FaithWebApp.Shared;
+
+namespace FaithWebApp.Client.Services.Clients
 {
     public interface IClientService
     {
-        List<CClient> ClientsList { get; }
+        List<Party> ClientsList { get; }
         Task GetClients();
+        Task<ServiceResponse<Party>> GetSingleClient(int id);
     }
 }

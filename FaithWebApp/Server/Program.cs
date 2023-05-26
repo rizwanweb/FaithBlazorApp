@@ -1,5 +1,6 @@
-global using FaithWebApp.Server;
-global using FaithWebApp.Server.Models;
+global using FaithWebApp.Shared;
+global using FaithWebApp.Shared.Models;
+global using FaithWebApp.Server.Data;
 using FaithWebApp.Server.Services.ClientServices;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;

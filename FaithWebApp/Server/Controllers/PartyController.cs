@@ -1,6 +1,5 @@
-﻿using FaithWebApp.Server.Models;
-using FaithWebApp.Server.Services.ClientServices;
-using Microsoft.AspNetCore.Http;
+﻿using FaithWebApp.Server.Services.ClientServices;
+using FaithWebApp.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FaithWebApp.Server.Controllers
@@ -17,10 +16,17 @@ namespace FaithWebApp.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<CClient>>>> GetClients()
+        public async Task<ActionResult<ServiceResponse<List<Party>>>> GetClients()
         {
             var result = await _clientService.GetClientsAsync();
             return Ok(result);
         }
-    }
+
+		[HttpGet("{clientID}")]
+		public async Task<ActionResult<ServiceResponse<Party>>> GetSingleClient(int clientID)
+		{
+			var result = await _clientService.GetSingleClient(clientID);
+			return Ok(result);
+		}
+	}
 }

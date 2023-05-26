@@ -1,13 +1,13 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Faith Associates</a>
+        <a class="navbar-brand" href="#">Faith Associates</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
@@ -17,7 +17,7 @@
 
         @*Client Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandClientMenu = !expandClientMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandClientMenu = !expandClientMenu">
                 Clients
             </NavLink>
             @if (expandClientMenu)
@@ -45,19 +45,19 @@
 
         @*Users Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandUserMenu = !expandUserMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandUserMenu = !expandUserMenu">
                  User
             </NavLink>
             @if (expandUserMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Add User
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              User List
                         </NavLink>
                     </li>
@@ -68,24 +68,24 @@
 
         @*Item Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandItemMenu = !expandItemMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandItemMenu = !expandItemMenu">
                  Items & Duty Structure
             </NavLink>
             @if (expandItemMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Add New Item
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Item List
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Duty Structure
                         </NavLink>
                     </li>
@@ -96,29 +96,29 @@
 
         @*Job Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandJobMenu = !expandJobMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandJobMenu = !expandJobMenu">
                  Jobs & Consignments
             </NavLink>
             @if (expandJobMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Home Consumption
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Into Bond
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Safe Transportation
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Consignment List
                         </NavLink>
                     </li>
@@ -129,24 +129,24 @@
 
         @*Billing Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandBillingMenu = !expandBillingMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandBillingMenu = !expandBillingMenu">
                  Billing
             </NavLink>
             @if (expandBillingMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Create Bill
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Create PID Bill
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Supplimentry Bill
                         </NavLink>
                     </li>
@@ -157,24 +157,24 @@
 
         @*Employee Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandEmployeeMenu = !expandEmployeeMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandEmployeeMenu = !expandEmployeeMenu">
                  Employees
             </NavLink>
             @if (expandEmployeeMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Add Employee
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Employee List
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Emp Attendence
                         </NavLink>
                     </li>
@@ -185,39 +185,39 @@
 
         @*Setup Menu*@
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" @onclick="()=> expandSetupMenu = !expandSetupMenu">
+            <NavLink class="nav-link" href="#" @onclick="()=> expandSetupMenu = !expandSetupMenu">
                  Setups
             </NavLink>
             @if (expandSetupMenu)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Terminals
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Shipping Lines
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              LOLO
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Ports
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Billing Heads
                         </NavLink>
                     </li>
                     <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="">
+                        <NavLink class="nav-link" href="#">
                              Taxes Setup
                         </NavLink>
                     </li>

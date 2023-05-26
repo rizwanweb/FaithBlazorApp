@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FaithWebApp.Server
+namespace FaithWebApp.Shared
 {
     public class ServiceResponse<T>
     {

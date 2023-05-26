@@ -1,5 +1,4 @@
-﻿using FaithWebApp.Server.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FaithWebApp.Server.Services.ClientServices
 {
@@ -11,20 +10,24 @@ namespace FaithWebApp.Server.Services.ClientServices
         {
             _context = context;
         }
-        public async Task<ServiceResponse<List<CClient>>> GetClientsAsync()
+        public async Task<ServiceResponse<List<Party>>> GetClientsAsync()
         {
-            var response = new ServiceResponse<List<CClient>>()
+            var response = new ServiceResponse<List<Party>>()
             {
-                Data = await _context.Clients.ToListAsync(),
+                Data = await _context.Clients
+                            .Include(c => c.City)
+                            .ToListAsync(),
             };
             return response;
         }
 
 
-        public async Task<ServiceResponse<CClient>> GetSingleClient(int clientID)
+        public async Task<ServiceResponse<Party>> GetSingleClient(int clientID)
         {
-            var response = new ServiceResponse<CClient>();
-            var client = await _context.Clients.SingleOrDefaultAsync(c => c.ClientId == clientID);
+            var response = new ServiceResponse<Party>();
+            var client = await _context.Clients
+                .Include(c => c.City)
+                .SingleOrDefaultAsync(c => c.Id == clientID);
 
             if (client == null)
             {

@@ -1,5 +1,4 @@
-﻿using FaithWebApp.Server;
-using FaithWebApp.Server.Models;
+﻿using FaithWebApp.Shared;
 using System.Net.Http.Json;
 
 namespace FaithWebApp.Client.Services.Clients
@@ -8,7 +7,7 @@ namespace FaithWebApp.Client.Services.Clients
     {
         private readonly HttpClient _http;
 
-        public List<CClient> ClientsList { get; set; } = new List<CClient>();
+        public List<Party> ClientsList { get; set; } = new List<Party>();
 
         
 
@@ -19,7 +18,7 @@ namespace FaithWebApp.Client.Services.Clients
 
         public async Task GetClients()
         {
-            var results = await _http.GetFromJsonAsync<ServiceResponse<List<CClient>>>("api/party");
+            var results = await _http.GetFromJsonAsync<ServiceResponse<List<Party>>>("api/party");
 
 
             if (results != null && results.Data != null)
@@ -27,5 +26,11 @@ namespace FaithWebApp.Client.Services.Clients
                 ClientsList = results.Data;                
             }
         }
-    }
+
+		public async Task<ServiceResponse<Party>> GetSingleClient(int id)
+		{
+            var result = await _http.GetFromJsonAsync<ServiceResponse<Party>>($"api/party/{id}");
+            return result;
+		}
+	}
 }

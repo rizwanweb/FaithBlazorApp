@@ -1,5 +1,5 @@
 global using FaithWebApp.Client.Services.Clients;
-global using FaithWebApp.Server.Models;
+global using FaithWebApp.Shared.Models;
 using FaithWebApp.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
