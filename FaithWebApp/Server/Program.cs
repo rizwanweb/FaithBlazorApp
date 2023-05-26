@@ -1,11 +1,22 @@
+global using FaithWebApp.Server;
+global using FaithWebApp.Server.Models;
+using FaithWebApp.Server.Services.ClientServices;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<IClientService, ClientService>();
 
 var app = builder.Build();
 

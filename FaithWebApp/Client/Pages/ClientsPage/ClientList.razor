@@ -1,0 +1,40 @@
+﻿
+@inject IClientService ClientService
+@page "/clientlist"
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Client Name</th>
+                <th scope="col">Contact Person</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">City</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in ClientService.ClientsList)
+            {
+                <tr>                    
+                    <td>@c.ClientName</td>
+                    <td>@c.ContactPerson</td>
+                    <td>@c.Phone</td>
+                    <td>@c.Mobile</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ClientService.GetClients();
+    }
+
+}

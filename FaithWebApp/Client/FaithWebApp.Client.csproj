@@ -24,4 +24,12 @@
     <ProjectReference Include="..\Shared\FaithWebApp.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Items\" />
+    <Folder Include="Pages\Jobs\" />
+    <Folder Include="Pages\Billings\" />
+    <Folder Include="Pages\Setups\" />
+    <Folder Include="Pages\Users\" />
+  </ItemGroup>
+
 </Project>

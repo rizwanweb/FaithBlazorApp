@@ -1,4 +1,4 @@
-using FaithWebApp.Shared;
+using FaithWebApp.Server;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FaithWebApp.Server.Controllers

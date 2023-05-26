@@ -1,4 +1,4 @@
-namespace FaithWebApp.Shared
+namespace FaithWebApp.Server
 {
 	public class WeatherForecast
 	{
