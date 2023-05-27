@@ -28,5 +28,21 @@ namespace FaithWebApp.Server.Controllers
 			var result = await _clientService.GetSingleClient(clientID);
 			return Ok(result);
 		}
-	}
+
+        [HttpGet("search/{searchText}")]
+        public async Task<ActionResult<ServiceResponse<List<Party>>>> SearchClient(string searchText)
+        {
+            var result = await _clientService.SearchClientsAsync(searchText);
+            return Ok(result);
+        }
+
+        [HttpGet("searchsuggestions/{searchText}")]
+        public async Task<ActionResult<ServiceResponse<List<Party>>>> GetClientSearchSuggestions(string searchText)
+        {
+            var result = await _clientService.GetClientSearchSuggestions(searchText);
+            return Ok(result);
+        }
+
+
+    }
 }
